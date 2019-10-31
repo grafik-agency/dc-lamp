@@ -3,7 +3,7 @@ version: "3"
 services:
   www:
     build:
-      context: "./bin/www"
+      context: "./www/bin"
     container_name: "dc-lamp-www"
     links:
       - db
@@ -18,7 +18,7 @@ services:
       - ${WWW_DIR_LOGS-./www/logs}:/var/log/apache2
   db:
     build:
-      context: "./bin/db"
+      context: "./db/bin"
     container_name: "dc-lamp-db"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOTPW}
