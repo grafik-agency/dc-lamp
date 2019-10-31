@@ -1,0 +1,33 @@
+version: "2019"
+
+services:
+  www:
+    build:
+      context: "./bin/www"
+    container_name: "dc-lamp-www"
+    links:
+      - db
+    ports:
+      - "${WWW_PORT_HTTP}:80"
+      - "${WWW_PORT_HTTPS}:443"
+    restart: 'always'
+    volumes:
+      - ${WWW_VHOSTS-./www/config/vhosts}:/etc/apache2/sites-enabled
+      - ${WWW_PHPINI-./www/config/php/php.ini}:/usr/local/etc/php/php.ini
+      - ${WWW_DIR_DATA-./www/data}:/var/www/html
+      - ${WWW_DIR_LOGS-./www/logs}:/var/log/apache2
+  db:
+    build:
+      context: "./bin/db"
+    container_name: "dc-lamp-db"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOTPW}
+      MYSQL_USER: ${DB_UNAME}
+      MYSQL_PASSWORD: ${DB_PWORD}
+      MYSQL_DATABASE: ${DB_SNAME}
+    ports:
+      - "${DB_PORT}:3306"
+    restart: 'always'
+    volumes:
+      - ${DB_DIR_DATA-./db/data}:/var/lib/mysql
+      - ${DB_DIR_LOGS-./db/logs}:/var/log/mysql
