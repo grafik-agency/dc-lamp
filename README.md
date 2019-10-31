@@ -1,11 +1,9 @@
 # LAMP Stack for Docker
 
-Please select a branch for the desired version of PHP your project needs.
-
-1. Debian GNU/Linux 9 (stretch)
-2. Apache 2.4
-3. MariaDB 10.3
-4. PHP [7.3.x], [7.2.x], [7.1.x], [5.6.x]
+- Debian GNU/Linux 9 (stretch)
+- Apache 2.4
+- MariaDB 10.3
+- PHP 7.3 (Additional Versions: [7.2.x] | [7.1.x] | [5.6.x])
 
 ## Getting Started
 
