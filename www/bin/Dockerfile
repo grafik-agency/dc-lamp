@@ -1,4 +1,4 @@
-FROM php:7.1-apache-stretch
+FROM php:5.6-apache
 
 ARG DEBIAN_FRONTEND=noninteractive
 
