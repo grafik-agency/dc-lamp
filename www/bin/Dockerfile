@@ -1,4 +1,4 @@
-FROM php:7.1-apache-stretch
+FROM php:7.3-apache-stretch
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -27,7 +27,9 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install zip && \
     docker-php-ext-install -j$(nproc) intl && \
     docker-php-ext-install mbstring && \
-    docker-php-ext-install gettext
+    docker-php-ext-install gettext && \
+    docker-php-ext-install opcache && \
+    docker-php-ext-install exif
 
 RUN apt-get -y update && \
     apt-get --no-install-recommends install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev && \
