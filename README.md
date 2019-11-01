@@ -2,7 +2,7 @@
 
 - Debian GNU/Linux 9 (stretch)
 - Apache 2.4
-- MariaDB 10.3
+- MySQL 5.7
 - PHP 7.3 (Additional Versions: [7.2] | [7.1] | [5.6])
 
 ## Getting Started
