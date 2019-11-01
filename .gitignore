@@ -1,3 +1,5 @@
 /db/data/
+/db/logs/
 /www/data/
+/www/logs/
 .DS_Store
