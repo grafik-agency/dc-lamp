@@ -25,7 +25,7 @@ docker-compose exec www bash
 ## SQL Access
 
 ```text
-docker-compose exec db mysql
+docker-compose exec db mysql -uroot -pgrafik
 ```
 
 [7.3]: https://github.com/grafik-agency/dc-lamp/tree/7.3
